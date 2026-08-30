@@ -1,0 +1,32 @@
+<nav class="toc" aria-label="Table of contents"></nav>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var content = document.querySelector('.post-content');
+    var toc = document.querySelector('.toc');
+    if (!content || !toc) return;
+    var heads = content.querySelectorAll('h2[id], h3[id]');
+    if (heads.length < 2) { toc.remove(); return; }
+    var ul = document.createElement('ul');
+    heads.forEach(function (h) {
+      var li = document.createElement('li');
+      li.className = 'toc-' + h.tagName.toLowerCase();
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    toc.appendChild(ul);
+    var links = toc.querySelectorAll('a');
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          links.forEach(function (l) {
+            l.classList.toggle('active', l.hash === '#' + e.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '0px 0px -70% 0px' });
+    heads.forEach(function (h) { obs.observe(h); });
+  });
+</script>
