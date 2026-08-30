@@ -1,0 +1,81 @@
+---
+# Shadows minima's assets/main.scss. Variables must be set before the import.
+---
+
+// Navy palette — consumed by minima 2.5.1
+$brand-color:      #66b3ff;   // links, accents
+$text-color:       #ccd9ea;   // body text
+$background-color: #0a192f;   // deep navy
+$grey-color:       #8892b0;   // post meta, footer text
+$grey-color-light: #223a5e;   // borders, table stripe base
+$grey-color-dark:  #e6f1ff;   // site title
+
+@import "minima";
+
+// --- Things the variables can't reach ---
+
+// minima hardcodes #eef here
+pre, code {
+  background-color: #112240;
+  border-color: #223a5e;
+}
+.highlight,
+.highlighter-rouge .highlight {
+  background: #112240;
+}
+
+h1, h2, h3, h4, h5, h6 { color: #e6f1ff; }
+
+.site-header {
+  border-top: 4px solid $brand-color;
+  border-bottom: 1px solid #223a5e;
+}
+.site-title,
+.site-title:visited {
+  color: #e6f1ff;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+a:visited { color: $brand-color; }
+a:hover   { color: lighten($brand-color, 12%); }
+
+.post-list > li {
+  padding-bottom: $spacing-unit / 2;
+  border-bottom: 1px solid #14284a;
+}
+.post-list > li:last-child { border-bottom: none; }
+.post-link { font-weight: 600; }
+.post-link:hover { color: lighten($brand-color, 12%); text-decoration: none; }
+
+blockquote {
+  color: #a9bad4;
+  border-left: 4px solid $brand-color;
+  background: rgba(102, 179, 255, 0.06);
+  padding-top: $spacing-unit / 4;
+  padding-bottom: $spacing-unit / 4;
+}
+
+.site-footer { border-top: 1px solid #223a5e; }
+
+::selection { background: #2b4a7a; color: #e6f1ff; }
+
+// --- Dark syntax highlighting (rouge token classes; minima ships light-only) ---
+.highlight {
+  .c, .cm, .c1, .cs, .cd { color: #6b7f9c; font-style: italic; }
+  .err { color: #e06c75; background-color: transparent; }
+  .k, .kd, .kn, .kp, .kr, .kv, .cp { color: #c678dd; }
+  .kt { color: #e5c07b; }
+  .o, .ow { color: #56b6c2; }
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1, .ss, .sr { color: #98c379; }
+  .m, .mf, .mh, .mi, .il, .mo, .mb, .mx { color: #d19a66; }
+  .na { color: #d19a66; }
+  .nb, .bp, .nc, .nn { color: #e5c07b; }
+  .nf, .fm { color: #61afef; }
+  .nt { color: #e06c75; }
+  .nv, .vc, .vg, .vi { color: #e06c75; }
+  .gd { color: #e06c75; }
+  .gi { color: #98c379; }
+  .gh, .gu { color: #61afef; font-weight: bold; }
+  .gp { color: #8892b0; }
+}
