@@ -6,7 +6,7 @@ permalink: /about/
 
 <img class="about-avatar" src="https://github.com/LioEinaudi.png" alt="Lio Einaudi" />
 
-I'm **Lio Einaudi**. I work on LLM inference performance — GPU kernels, MoE tuning, deterministic (batch-invariant) inference — with one operating rule: benchmarks run on the latest release, gated by a correctness probe, or they don't count.
+I'm **Jinbin Zhao (赵锦彬)**, online as **Lio Einaudi**. I work on LLM inference performance — GPU kernels, MoE tuning, deterministic (batch-invariant) inference — with one operating rule: benchmarks run on the latest release, gated by a correctness probe, or they don't count.
 
 ## Work
 
