@@ -32,7 +32,7 @@ I'm **Jinbin Zhao (赵锦彬)**, online as **Lio Einaudi**. I work on LLM infere
 
 ## Beyond work
 
-Middle- and long-distance running, piano (yes, that's where the pen name comes from), and *Attack on Titan*.
+Middle- and long-distance running, piano, and *Attack on Titan*.
 
 ---
 
