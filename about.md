@@ -2,6 +2,8 @@
 layout: page
 title: About
 permalink: /about/
+lang: en
+translation_url: /zh/about/
 ---
 
 <img class="about-avatar" src="https://github.com/LioEinaudi.png" alt="Lio Einaudi" />
@@ -18,7 +20,7 @@ I measure on **NVIDIA H20** and **RTX 4090D** — deliberately outside the H100/
 
 ## Experience
 
-- **Dexmal (原力灵机)**, embodied-AI startup — AI Infra intern, June 2026 – present.
+- **Dexmal (原力灵机)**, embodied-AI startup — AI Infra algorithm intern, June 2026 – present.
 
 ## Education
 
