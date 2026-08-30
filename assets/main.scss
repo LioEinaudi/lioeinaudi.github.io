@@ -114,6 +114,13 @@ blockquote {
   .toc { display: none; }
 }
 
+// --- Section dividers (--- in markdown) ---
+.post-content hr {
+  border: none;
+  border-top: 1px solid #1c3357;
+  margin: 40px 0;
+}
+
 // --- Language switch pill in the nav ---
 .site-nav .lang-switch {
   border: 1px solid #223a5e;
