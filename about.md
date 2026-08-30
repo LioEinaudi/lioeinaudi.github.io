@@ -2,6 +2,8 @@
 layout: page
 title: About
 permalink: /about/
+lang: en
+translation_url: /zh/about/
 ---
 
 <img class="about-avatar" src="https://github.com/LioEinaudi.png" alt="Lio Einaudi" />
