@@ -39,4 +39,4 @@ translation_url: /about/
 ## 联系方式
 
 - GitHub:[@LioEinaudi](https://github.com/LioEinaudi)
-- 邮箱:[lioeinaudi@qq.com](mailto:lioeinaudi@qq.com)
+- 邮箱:[Jinbin.Zhao.Dev@gmail.com](mailto:Jinbin.Zhao.Dev@gmail.com)

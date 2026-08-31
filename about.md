@@ -39,4 +39,4 @@ Middle- and long-distance running, piano, and *Attack on Titan*.
 ## Contact
 
 - GitHub: [@LioEinaudi](https://github.com/LioEinaudi)
-- Email: [lioeinaudi@qq.com](mailto:lioeinaudi@qq.com)
+- Email: [Jinbin.Zhao.Dev@gmail.com](mailto:Jinbin.Zhao.Dev@gmail.com)
