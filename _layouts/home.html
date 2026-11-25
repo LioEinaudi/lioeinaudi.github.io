@@ -30,7 +30,11 @@ layout: default
       {%- endfor -%}
     </ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    {%- if page_lang == "zh" -%}
+      <p class="rss-subscribe">通过 <a href="{{ "/feed.xml" | relative_url }}">RSS</a> 订阅</p>
+    {%- else -%}
+      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    {%- endif -%}
   {%- endif -%}
 
 </div>
