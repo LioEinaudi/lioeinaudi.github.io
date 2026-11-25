@@ -6,5 +6,12 @@ github_username: LioEinaudi
 
 show_excerpts: true
 
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      lang: en
+
 header_pages:
   - about.md

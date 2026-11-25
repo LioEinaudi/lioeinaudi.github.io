@@ -22,7 +22,7 @@
       entries.forEach(function (e) {
         if (e.isIntersecting) {
           links.forEach(function (l) {
-            l.classList.toggle('active', l.hash === '#' + e.target.id);
+            l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
           });
         }
       });

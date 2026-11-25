@@ -2,6 +2,8 @@
 layout: post
 title: "Cutting the Determinism Tax: Making vLLM's Batch-Invariant Mode up to 1.4× Faster"
 date: 2026-08-30
+lang: en
+translation_url: /zh/2026/08/30/cutting-the-determinism-tax.html
 ---
 
 *How a two-GPU measurement project turned into my first merged vLLM PR ([#53247](https://github.com/vllm-project/vllm/pull/53247)) — and what it taught me about measurement discipline.*
@@ -12,7 +14,7 @@ Ask an LLM served by any modern inference engine the same question twice — gre
 
 vLLM ships a batch-invariant mode (`VLLM_BATCH_INVARIANT=1`) that swaps the offending kernels for invariant ones. The catch: those kernels are slow. The community calls the slowdown the **determinism tax**, and when I started measuring it, the tax on my hardware was 30–35% of throughput.
 
-This post is about finding out exactly where that tax is paid and tuning most of the biggest line-item away. The work landed upstream as [PR #53247](https://github.com/vllm-project/vllm/pull/53247); the headline numbers on H20 are **−29% end-to-end latency (1.42×) at batch 8** and **+3–12% throughput**, with the invariance guarantee bit-for-bit intact.
+This post is about finding out exactly where that tax is paid and tuning most of the biggest line-item away. The work landed upstream as [PR #53247](https://github.com/vllm-project/vllm/pull/53247); the headline numbers are **−29.4% end-to-end latency (1.42×) at batch 8 and +3.4% throughput on H20**, and **−23.0% latency at batch 8 and +12.0% throughput on RTX 4090D**, with the invariance guarantee bit-for-bit intact.
 
 ## Setup: two GPUs the big labs don't tune for
 
