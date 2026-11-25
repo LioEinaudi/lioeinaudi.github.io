@@ -1,0 +1,46 @@
+{%- assign theme_label = "Dark mode" -%}
+{%- if page.lang == "zh" -%}{%- assign theme_label = "深色模式" -%}{%- endif -%}
+<button type="button" class="theme-toggle" hidden aria-label="{{ theme_label }}" title="{{ theme_label }}"></button>
+<script>
+  (() => {
+    const root = document.documentElement;
+    const button = document.querySelector('.theme-toggle');
+    const system = window.matchMedia('(prefers-color-scheme: dark)');
+    let fadeCleanup;
+
+    function isDark() {
+      return root.dataset.theme ? root.dataset.theme === 'dark' : system.matches;
+    }
+
+    function updateButton() {
+      const dark = isDark();
+      button.textContent = dark ? '☀' : '☾';
+      button.setAttribute('aria-pressed', String(dark));
+    }
+
+    function syncPreference() {
+      try { applyThemePreference(localStorage.getItem('theme')); } catch (error) {}
+      updateButton();
+    }
+
+    button.addEventListener('click', () => {
+      const theme = isDark() ? 'light' : 'dark';
+      root.classList.add('theme-switching');
+      clearTimeout(fadeCleanup);
+      fadeCleanup = setTimeout(() => root.classList.remove('theme-switching'), 350);
+      applyThemePreference(theme);
+      updateButton();
+      try { localStorage.setItem('theme', theme); } catch (error) {}
+    });
+    system.addEventListener('change', updateButton);
+    window.addEventListener('pagehide', () => root.classList.remove('theme-switching'));
+    window.addEventListener('pageshow', event => {
+      if (event.persisted) syncPreference();
+    });
+    window.addEventListener('storage', event => {
+      if (event.key === 'theme' || event.key === null) syncPreference();
+    });
+    updateButton();
+    button.hidden = false;
+  })();
+</script>

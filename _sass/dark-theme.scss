@@ -1,0 +1,44 @@
+@mixin dark-theme {
+  color-scheme: dark;
+  --background: #161618;
+  --text: #e4e4e7;
+  --muted: #9ca3af;
+  --line: #2d2d32;
+  --soft-background: #222226;
+  --link: #93c5fd;
+  --link-underline: #6485aa;
+  --link-hover: #bfdbfe;
+  --quote: #c7c7cf;
+  --table-heading: var(--soft-background);
+  --table-line: var(--line);
+  --table-stripe: #1b1b1e;
+  --selection: #34445b;
+  --control-line: #55555e;
+  --syntax-comment: var(--muted);
+  --syntax-keyword: #c4b5df;
+  --syntax-function: var(--link);
+  --syntax-string: #aacbad;
+  --syntax-number: #e3be97;
+  --syntax-name: #9acbd0;
+  --syntax-error: #edb2b6;
+  --syntax-error-bg: #422c33;
+  --syntax-added-bg: #293b32;
+
+  .highlight {
+    .c, .c1, .cm, .cs, .ch, .cd, .cpf, .gh, .go, .gp, .gu, .w { color: var(--syntax-comment); }
+    .k, .kc, .kd, .kn, .kp, .kr, .kt, .cp, .ow { color: var(--syntax-keyword); }
+    .nf, .fm, .nc, .nd, .nb, .bp, .nt { color: var(--syntax-function); }
+    .s, .s1, .s2, .sa, .sb, .sc, .sd, .dl, .sh, .si, .sr, .ss, .sx { color: var(--syntax-string); }
+    .m, .mb, .mf, .mh, .mi, .mo, .il, .se { color: var(--syntax-number); }
+    .na, .ni, .nn, .no, .nv, .vc, .vg, .vi, .vm { color: var(--syntax-name); }
+    .ne, .gr, .gt { color: var(--syntax-error); }
+    .err, .gd, .gd .x { color: var(--syntax-error); background: var(--syntax-error-bg); }
+    .gi, .gi .x { color: var(--syntax-string); background: var(--syntax-added-bg); }
+  }
+
+  // Mark a white-background plot in Markdown with {: .benchmark-chart}.
+  .post-content img.benchmark-chart {
+    border-radius: 6px;
+    filter: brightness(0.9);
+  }
+}

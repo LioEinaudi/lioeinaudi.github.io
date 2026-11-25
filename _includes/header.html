@@ -27,6 +27,7 @@
             <a class="page-link lang-switch" href="{{ page.translation_url | relative_url }}">{%- if page.lang == "zh" -%}EN{%- else -%}中文{%- endif -%}</a>
           {%- endif -%}
         </div>
+        {%- include theme-toggle.html -%}
       </nav>
     {%- endif -%}
   </div>
