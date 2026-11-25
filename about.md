@@ -8,7 +8,7 @@ translation_url: /zh/about/
 
 <img class="about-avatar" src="https://github.com/LioEinaudi.png" alt="Lio Einaudi" />
 
-I'm **Jinbin Zhao (赵锦彬)**, online as **Lio Einaudi**. I work on LLM inference performance — GPU kernels, MoE tuning, deterministic (batch-invariant) inference. Most of my public work lives in [vLLM](https://github.com/vllm-project/vllm/pulls?q=author%3ALioEinaudi).
+I'm **Jinbin Zhao (赵锦彬)**, online as **Lio Einaudi**. I work on LLM and multimodal inference systems — GPU kernels, compiler graph optimization, and deterministic inference. Most of my public work lives in [vLLM](https://github.com/vllm-project/vllm/pulls?q=author%3ALioEinaudi).
 
 ---
 

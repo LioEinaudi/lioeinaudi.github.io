@@ -1,5 +1,5 @@
 title: Lio Einaudi
-description: Notes on LLM inference performance — kernels, determinism, and measurement discipline.
+description: Notes on LLM and multimodal inference systems — GPU kernels, compiler graph optimization, and determinism.
 url: "https://lioeinaudi.github.io"
 theme: minima
 github_username: LioEinaudi

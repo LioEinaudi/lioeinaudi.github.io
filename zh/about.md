@@ -8,7 +8,7 @@ translation_url: /about/
 
 <img class="about-avatar" src="https://github.com/LioEinaudi.png" alt="赵锦彬" />
 
-我是**赵锦彬**,网名 **Lio Einaudi**。我做 LLM 推理性能优化:GPU kernel、MoE 调优、确定性(batch-invariant)推理。开源工作主要在 [vLLM](https://github.com/vllm-project/vllm/pulls?q=author%3ALioEinaudi)。
+我是**赵锦彬**，网名 **Lio Einaudi**。我做 LLM 与多模态推理系统研究——GPU kernel、AI 编译器图优化、确定性推理。开源工作主要在 [vLLM](https://github.com/vllm-project/vllm/pulls?q=author%3ALioEinaudi)。
 
 ---
 
