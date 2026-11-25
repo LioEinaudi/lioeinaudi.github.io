@@ -1,4 +1,9 @@
-<nav class="toc" aria-label="Table of contents"></nav>
+{%- assign toc_label = "Table of contents" -%}
+{%- if page.lang == "zh" -%}{%- assign toc_label = "目录" -%}{%- endif -%}
+<nav class="toc" aria-label="{{ toc_label }}" hidden>
+  <button class="toc-toggle" type="button" aria-controls="toc-list" aria-expanded="false">{{ toc_label }}</button>
+  <ul id="toc-list"></ul>
+</nav>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var content = document.querySelector('.post-content');
@@ -6,7 +11,7 @@
     if (!content || !toc) return;
     var heads = content.querySelectorAll('h2[id], h3[id]');
     if (heads.length < 2) { toc.remove(); return; }
-    var ul = document.createElement('ul');
+    var ul = toc.querySelector('ul');
     heads.forEach(function (h) {
       var li = document.createElement('li');
       li.className = 'toc-' + h.tagName.toLowerCase();
@@ -16,7 +21,11 @@
       li.appendChild(a);
       ul.appendChild(li);
     });
-    toc.appendChild(ul);
+    var toggle = toc.querySelector('button');
+    toggle.addEventListener('click', function () {
+      toggle.setAttribute('aria-expanded', toggle.getAttribute('aria-expanded') === 'false');
+    });
+    toc.hidden = false;
     var links = toc.querySelectorAll('a');
     var obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {

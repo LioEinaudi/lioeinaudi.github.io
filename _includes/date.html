@@ -1,0 +1,6 @@
+{%- if page.lang == "zh" -%}
+  {{- include.date | date: "%Y年%-m月%-d日" -}}
+{%- else -%}
+  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+  {{- include.date | date: date_format -}}
+{%- endif -%}

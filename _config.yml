@@ -1,5 +1,6 @@
 title: Lio Einaudi
 description: Notes on LLM and multimodal inference systems — GPU kernels, compiler graph optimization, and determinism.
+description_zh: 关于大语言模型与多模态推理系统的笔记，记录 GPU 算子、编译器图优化与确定性推理。
 url: "https://lioeinaudi.github.io"
 theme: minima
 github_username: LioEinaudi
