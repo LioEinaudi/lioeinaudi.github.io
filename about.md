@@ -14,7 +14,8 @@ I'm **Jinbin Zhao (赵锦彬)**, online as **Lio Einaudi**. I work on LLM infere
 
 ## Experience
 
-- **Dexmal (原力灵机)**, embodied-AI startup — AI Infra algorithm intern, June 2026 – present.
+- **NIO (蔚来)** — Incoming Inference Systems Research Intern.
+- **Dexmal (原力灵机)**, embodied-AI startup — AI Infra algorithm intern, June 10 – November 23, 2026.
 
 ---
 
