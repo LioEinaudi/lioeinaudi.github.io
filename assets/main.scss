@@ -185,6 +185,11 @@ h6 {
   font-size: 0.84rem;
 }
 
+.home .benchmark-note {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
 html:lang(zh) .e-content > p:first-child > em:only-child,
 html:lang(zh) .post-list > li > p:first-of-type > em:only-child {
   color: var(--muted);

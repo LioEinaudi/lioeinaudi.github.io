@@ -1,12 +1,11 @@
 ---
 layout: home
+title: 赵锦彬
 permalink: /zh/
 lang: zh
 translation_url: /
 list_title: 最新文章
 ---
-
-# 赵锦彬
 
 **推理系统工程师**  
 中央民族大学 · 计算机科学与技术本科，预计 2028 年毕业
@@ -17,8 +16,14 @@ list_title: 最新文章
 
 ## 精选贡献
 
-- **TP 分片矩阵乘调优**：在双卡 RTX PRO 6000（Blackwell SM120）上把 Qwen3-8B 的 batch-invariant 整批生成延迟从 **3.00s 降到 1.33s** 并通过跨 batch 位级一致校验，为 SM120 补充 TP=2/4/8 分片形状的 Triton 按 M 分桶配置（[PR #58495](https://github.com/vllm-project/vllm/pull/58495)）。
-- **图捕获时选择矩阵乘配置**：在 RTX PRO 6000 上把 Qwen3-1.7B/4B/8B 的整批延迟降低 **54.2%–63.6%**，相对普通推理的额外延迟从 **128%–195% 压到 4%–7%**——为支持的 batch-invariant 配置启用 breakable CUDA Graph，按捕获时的真实 `M` 选配（[PR #57586](https://github.com/vllm-project/vllm/pull/57586)）。
-- **GLM-4 测试误报排查**：在同一引擎上把确定性测试从 59/64 修到 **64/64**，并让 GLM-4-9B-Chat 在 RTX PRO 6000 上跑通 `test_batch_invariance.py` 全部 **19** 项用例——定位到 `.Here` 重分词导致前缀 token ID 错位，保留原作者署名集成社区 @Evangade 的 token ID 前缀补丁（[PR #53692](https://github.com/vllm-project/vllm/pull/53692)、[原始补丁 #43317](https://github.com/vllm-project/vllm/pull/43317)、[排查笔记](/zh/2026/11/25/glm-4-token-prefix.html)）。
+- 张量并行调优让 Qwen3-8B 的整批生成延迟从 **3.00 秒降到 1.33 秒**。<br>
+  我针对 Blackwell SM120 在 TP=2/4/8 下每张卡实际处理的矩阵形状，调优了矩阵乘的分块配置。[PR #58495](https://github.com/vllm-project/vllm/pull/58495)
+- 把矩阵乘的分块选择移到图捕获阶段后，Qwen3-1.7B、4B、8B 的整批延迟降低了 **54.2%–63.6%**。<br>
+  启用 breakable CUDA Graph 后，算子可以按捕获时矩阵的实际行数（`M`）选择分块。[PR #57586](https://github.com/vllm-project/vllm/pull/57586)
+- 在 GLM-4 的前缀测试中，token ID 和 logprob 均匹配的位置从 **59/64 增至 64/64**。<br>
+  我把五处差异追溯到 `.Here` 的重新分词，并集成了 @Evangade 的修复。[PR #53692](https://github.com/vllm-project/vllm/pull/53692) · [原始补丁](https://github.com/vllm-project/vllm/pull/43317) · [排查笔记]({{ '/zh/2026/11/25/glm-4-token-prefix.html' | relative_url }})
+
+前两项延迟数据均来自以解码为主的基准，开启批次不变模式（BI=1），输入 32 个 token，输出 128 个 token，batch size 为 8。TP 调优使用两张 RTX PRO 6000（TP=2），图执行优化使用单张同型号 GPU。
+{: .benchmark-note}
 
 ---
